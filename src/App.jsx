@@ -1,22 +1,19 @@
-// Import global style for the application
-import GlobalStyle from './Components/Styles/Global'
-
-// import the ThemeProvider from Stymed components
+//Styled components
 import { ThemeProvider } from "styled-components";
-import MainTheme from "./Components/Styles/MainTheme";
-
-import Header from "./Components/Header/Header";
-import { StyledContainer } from "./Components/Styles/Container.styled";
+import { theme } from "./Theme";
+import { GlobalStyle } from "./GlobalStyles";
+// Components
+import Button from "./Components/Button/Button";
+import InsideButton from "./Components/Button/StyledButton";
 
 function App() {
   return (
-    <ThemeProvider theme={MainTheme}>
+    <ThemeProvider theme={theme}>
       <>
-      <GlobalStyle/>
-        <Header />
-        <StyledContainer>
-          <h1>Hello world</h1>
-        </StyledContainer>
+        <GlobalStyle />
+        <h1 className="title">Hello world</h1>
+        <Button background="violet">Click me</Button>
+        <InsideButton background="violet">Inside Button</InsideButton>
       </>
     </ThemeProvider>
   );
